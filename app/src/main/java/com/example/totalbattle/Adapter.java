@@ -46,6 +46,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             int x = itemData.getSum() + 1;
             itemData.setSum(x);
             holder.sum.setText(x + "");
+            listener.onItemClick(itemData.getKey(), 1, itemData.getPoint());
         });
 
         holder.neg.setOnClickListener(view -> {
@@ -53,6 +54,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 int x = itemData.getSum() - 1;
                 itemData.setSum(x);
                 holder.sum.setText(x + "");
+                listener.onItemClick(itemData.getKey(), -1, -itemData.getPoint());
             }
         });
 
@@ -88,6 +90,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
 
     public interface OnItemClickListener {
-        void onItemClick(int index);
+        void onItemClick(String key, int sum, int point);
     }
 }

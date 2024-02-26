@@ -7,13 +7,18 @@ public class Model {
     private final int point;
     private final String name;
     private int sum;
+    private final String key;
 
-
-    public Model(int image, int point, String name, int sum) {
+    public Model(int image, int point, String name, int sum, String key) {
         this.image = image;
         this.point = point;
         this.name = name;
         this.sum = sum;
+        this.key = key;
+    }
+
+    public String getKey() {
+        return key;
     }
 
     public int getImage() {
